@@ -1,0 +1,8 @@
+
+
+#for i in {defconfig,defconfig_fragment,methode.cfg,connectivity.cfg} ; do 
+
+for i in {defconfig,defconfig_fragment,methode.cfg,0001-linux-bangalore-3.2.patch,am335x-pm-firmware.bin,am335x-pm-firmware.elf} ; do 
+	echo $i ; 
+	cat $i | md5sum ; 
+done

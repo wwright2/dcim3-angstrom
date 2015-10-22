@@ -1,0 +1,74 @@
+This README file contains information on the contents of the
+methode layer.
+
+Please see the corresponding sections below for details.
+
+
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.openembedded.org/bitbake
+  branch: master
+
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta
+  branch: master
+
+  URI: git://git.yoctoproject.org/xxxx
+  layers: xxxx
+  branch: master
+
+#arago-project arago-daisy-config.txt add meta-methode
+- bitbake,git://git.openembedded.org/bitbake,1.24,HEAD,layers=
+- meta-arago,git://arago-project.org/git/meta-arago.git,master,HEAD,layers=meta-arago-distro:meta-arago-extras
+- meta-qt5,git://github.com/meta-qt5/meta-qt5.git,master,HEAD,layers=
+- meta-openembedded,git://git.openembedded.org/meta-openembedded,daisy,HEAD,layers=toolchain-layer:meta-networking:meta-ruby:meta-oe
+- meta-ti,git://arago-project.org/git/meta-ti.git,daisy,HEAD,layers=
+- meta-linaro,git://git.linaro.org/openembedded/meta-linaro.git,daisy,HEAD,layers=meta-linaro-toolchain
+- oe-core,git://git.openembedded.org/openembedded-core,daisy,HEAD,layers=meta
+- meta-methode,https://github.com/wwright2/meta-methode.git,daisy,HEAD,layers=
+
+
+Patches
+=======
+
+Please submit any patches against the methode layer to the
+xxxx mailing list (wwright@methode.com) and cc: the maintainer:
+
+Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+
+
+Table of Contents
+=================
+
+  I. Adding the methode layer to your build
+ II. Misc
+
+
+I. Adding the methode layer to your build
+=================================================
+
+--- replace with specific instructions for the methode layer ---
+
+In order to use this layer, you need to make the build system aware of
+it.
+
+Assuming the methode layer exists at the top-level of your
+yocto build tree, you can add it to the build system by adding the
+location of the methode layer to bblayers.conf, along with any
+other layers needed. e.g.:
+
+  BBLAYERS ?= " \
+    /path/to/yocto/meta \
+    /path/to/yocto/meta-yocto \
+    /path/to/yocto/meta-yocto-bsp \
+    /path/to/yocto/meta-methode \
+    "
+
+
+II. Misc
+========
+
+--- replace with specific information about the methode layer ---

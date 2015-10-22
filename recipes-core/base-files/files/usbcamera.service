@@ -1,0 +1,17 @@
+[Unit]
+Description=Load video drivers for usb camera
+ConditionFileIsExecutable=/etc/init.d/usbcamera-mods.sh
+
+[Service]
+Type=oneshot
+ExecStart=/etc/init.d/usbcamera-mods.sh start
+ExecStop=/etc/init.d/usbcamera-mods.sh stop
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=96
+
+[Install]
+WantedBy=multi-user.target
+
+

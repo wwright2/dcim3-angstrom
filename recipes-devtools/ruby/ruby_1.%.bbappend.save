@@ -1,0 +1,34 @@
+
+x86_64-nativesdk-angstromsdk-linux/gcc-cross-canadian-arm/linaro-4.9-r2014.11/package/usr/local/oecore-x86_64/sysroots/x86_64-angstromsdk-linux/usr/bin/arm-angstrom-linux-gnueabi/arm-angstrom-linux-gnueabi-gcc
+
+EXTRA_OECONF = " \
+    --disable-versioned-paths 		\
+    --disable-rpath 				\
+    --enable-shared 				\
+    --enable-load-relative 			\
+    --build=x86_64-linux --host=arm-linux-gnueabihf	\
+    --target=arm-linux-gnueabihf --prefix=/usr	\ 
+	--exec_prefix=/usr --bindir=/usr/bin	\
+	--sbindir=/usr/sbin --libexecdir=/usr/lib/ruby --datadir=/usr/share --sysconfdir=/etc	\
+	--sharedstatedir=/com --localstatedir=/var --libdir=/usr/lib --includedir=/usr/include	\
+	--oldincludedir=/usr/include --infodir=/usr/share/info --mandir=/usr/share/man	\
+    CC='arm-linux-gnueabihf-gcc -march=armv7-a -mthumb -mthumb-interwork -mfloat-abi=hard -mfpu=neon  --sysroot=/usr/local/arm-linux-gnueabihf/arm-linux-gnueabihf/libc/ '	\
+    CFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types' 'LDFLAGS=-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed '		\
+    CPPFLAGS=' ' \
+    CXX='arm-linux-gnueabihf-g++ -march=armv7-a -mthumb -mthumb-interwork -mfloat-abi=hard -mfpu=neon  --sysroot=/usr/local/arm-linux-gnueabihf/arm-linux-gnueabihf/libc/ '	\
+    CXXFLAGS=' -O2 -pipe -g -feliminate-unused-debug-types -fvisibility-inlines-hidden '								\	
+    CPP='arm-linux-gnueabihf-gcc -E --sysroot=/usr/local/arm-linux-gnueabihf/arm-linux-gnueabihf/libc/ -march=armv7-a -mthumb -mthumb-interwork -mfloat-abi=hard -mfpu=neon'	\
+    "
+
+#B="${WORKDIR}/build"
+EXTRA_OECONF = " \
+    --build=x86_64-linux --host=arm-linux-gnueabihf	\
+    --target=arm-linux-gnueabihf \
+    --with-sysroot=/ \
+    CC='arm-linux-gnueabihf-gcc -march=armv7-a -mthumb -mthumb-interwork -mfloat-abi=hard -mfpu=neon --sysroot=/home/wwright/dev/dcim3.x/angstrom/build/tmp-angstrom_v2014_12-glibc/sysroots/am335x-evm ' \
+    CFLAGS='-O2 -pipe -g -feliminate-unused-debug-types -L/lib -L/usr/lib '	\
+    LDFLAGS=' -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -L/lib -L/usr/lib '	\
+	"
+	
+# --sysroot=/home/wwright/dev/dcim3.x/angstrom/build/tmp-angstrom_v2014_12-glibc/sysroots/am335x-evm 
+# x64 /home/wwright/dev/dcim3.x/angstrom/build/tmp-angstrom_v2014_12-glibc/sysroots/x86_64-linux/usr/bin/arm-angstrom-linux-gnueabi/arm-angstrom-linux-gnueabi-g++

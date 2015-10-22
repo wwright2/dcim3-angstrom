@@ -1,0 +1,24 @@
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
+
+SRC_URI += "file://defconfig;name=defconfig"
+SRC_URI[defconfig.md5sum] = "00d9c8a136be73cafc2e8480af0085e6"
+
+SRC_URI += "file://defconfig_fragment;name=fragment"
+SRC_URI[fragment.md5sum] = "9dfaf365627c0286fa8ebe1b36e5c322"
+
+SRC_URI += "file://methode.cfg;name=methode"
+SRC_URI[methode.md5sum] = "84d6dc5df4b438d011b9ddfbbf135743"
+
+SRC_URI += "file://0001-linux-dcim3.patch;name=patch"
+SRC_URI[patch1.md5sum] = "0c77b7d5d47ac25cc9425d7a3abbe94c"
+
+CMDLINE = "console=ttyO0,115200n8 rootwait root=/dev/mmcblk0p2"
+
+S = "${WORKDIR}/git"
+KERNEL_CONFIG_DIR = "${S}/ti_config_fragments"
+KERNEL_CONFIG_FRAGMENTS_remove = " ${KERNEL_CONFIG_DIR}/am33xx_only.cfg"
+
+KERNEL_CONFIG_FRAGMENTS += " ${S}/../methode.cfg"
+
