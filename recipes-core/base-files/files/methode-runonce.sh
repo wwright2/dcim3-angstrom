@@ -31,7 +31,8 @@ cp archive/methode.conf .
 cp archive/gstream*.conf .
 opkg update
 
-opkg install  	gstreamer1.0-plugins-good 
+opkg install  	gstreamer1.0-plugins-good  \
+	qt4-embedded-plugin-gfxdriver-gfxtransformed	\
 	gstreamer1.0-plugins-base-ximagesink \
 	gstreamer1.0-plugins-base-ogg \
 	gstreamer1.0-plugins-base-encodebin \
